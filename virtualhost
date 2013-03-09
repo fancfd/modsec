@@ -1,0 +1,39 @@
+# 虚拟主机中的设置
+
+## 设置虚拟主机配置文 */etc/httpd/conf.d/virtualhost*
+
+    NameVirtualHost *:80
+    
+    <virtualHost *:80>
+        ServerAdmin webmaster@dummy-host.example.com
+        DocumentRoot /var/www/html/ModSec
+        ServerName modsec
+        ErrorLog logs/ModSec-error_log
+        CustomLog logs/ModSec-access_log common
+    </VirtualHost>
+    
+    <virtualHost *:80>
+        ServerAdmin webmaster@dummy-host.example.com
+        ServerName app1.modsec
+    
+        ProxyRequests Off
+        <Proxy *>
+            Order deny,allow
+            Allow from all
+        </Proxy>
+     
+       ProxyPass / http://www.sina.com.cn/
+       ProxyPassReverse / http://www.sina.com.cn/
+        <Location />
+            Order allow,deny
+            Allow from all
+        </Location>
+    
+        <IfModule mod_security2.c>
+            SecRuleEngine Off
+        </IfModule>
+    
+        ErrorLog logs/app1.ModSec-error_log
+        CustomLog logs/app1.ModSec-access_log common
+    </VirtualHost></VirtualHost>
+
