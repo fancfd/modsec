@@ -9,6 +9,7 @@
 ### 第一步：安装依赖包
 
     # yum install httpd* gcc make pcre* libxml2* libcurl* lua* libtool openssl -y
+    # yum install libxml2-devel lua-devel httpd-devel curl-devel pcre-devel -y
 
 ### 第二步：安装Mod_Security
 
