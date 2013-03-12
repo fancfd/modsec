@@ -12,7 +12,7 @@
 
 ### 第二步：安装Mod_Security
 
-    # cd cd /usr/local/src
+    # cd /usr/local/src
     # wget http://www.modsecurity.org/tarball/2.7.2/modsecurity-apache_2.7.2.tar.gz
     # tar -xzf modsecurity-apache_2.7.2.tar.gz
     # cd modsecurity-apache*
